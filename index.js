@@ -84,9 +84,9 @@ async function runPuppeteer() {
       await secondaryIframe.waitForSelector('#audio-response');
       await secondaryIframe.type('#audio-response', audioText, 500);
       await secondaryIframe.click('#recaptcha-verify-button');
+      await page.click('button.sapMBtn.sapMBtnBase.sapMBtnInverted');
     }
   });
-  await page.click('.sapMBtn sapMBtnBase sapMBtnInverted');
   await page.waitForNavigation();
   await page.waitForTimeout(15000);
   await browser.close();
